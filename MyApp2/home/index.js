@@ -80,11 +80,17 @@ class Home extends React.Component {
 
                 {
                     this.state.bank.map((item, index) => {
+                        let img = "https://trial.ifastps.com.cn/fe/rest/bank/get-bank-picture/" + item.bankImage
                         return (
                             <View key={index} style={{ padding: 10 }}>
                                 <View style={{ borderWidth: 1, borderColor: '#eee', borderRadius: 5, shadowColor: '#ccc', shadowRadius: 100}}>
                                     <View style={{ padding: 15, justifyContent: 'space-between', flexDirection: 'row', borderBottomColor: '#ccc', borderBottomWidth: 1 }}>
-                                        <Text style={{ fontSize: 18 }}>{item.bank}****{item.bankAccountNumber.slice(-4)}</Text>
+                                        <Text style={{ fontSize: 18 }}>
+                                        <Image
+                                                source={{ uri: img }}
+                                                style={{ width: 20, height: 20, marginBottom: -3 }}>
+                                            </Image>
+                                        {item.bank}****{item.bankAccountNumber.slice(-4)}</Text>
                                         <Text style={{ fontSize: 18 }}>3,123,123,400.00</Text>
                                     </View>
 
